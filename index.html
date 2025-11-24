@@ -1,75 +1,154 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="refresh" content="0; URL=intro.html" />
-</head>
-<body>
-  <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Happy Birthday ❤️</title>
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-           margin:0; padding:0; background:#fff7f9; color:#222; display:flex; flex-direction:column; align-items:center;}
-    .container { max-width:900px; padding:28px; text-align:center; }
-    h1 { font-size:2.2rem; margin:0 0 8px; color:#d6336c; }
-    p.lead { font-size:1.1rem; margin:0 0 18px; }
-    .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-              gap:12px; margin-top:18px; }
-    .photo { border-radius:12px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.08); background:#fff; }
-    .photo img { width:100%; display:block; height:220px; object-fit:cover; }
-    .caption { padding:10px; font-size:0.95rem; color:#444; }
-    footer { margin-top:20px; font-size:0.9rem; color:#666; }
-    .surprise-btn { display:inline-block; margin-top:12px; padding:10px 16px; border-radius:10px;
-                    background:#d6336c; color:white; text-decoration:none; font-weight:600;}
-    audio { margin-top:14px; }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Happy Birthday ❤️</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: linear-gradient(120deg, #ffdde1, #ee9ca7);
+    height: 100vh;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family: "Segoe UI", sans-serif;
+    color:#fff;
+    position:relative;
+  }
+
+  /* Floating particles */
+  .bubble {
+    position:absolute;
+    bottom:-80px;
+    width:20px;
+    height:20px;
+    background: rgba(255,255,255,0.33);
+    border-radius:50%;
+    animation: rise 8s infinite ease-in;
+  }
+  @keyframes rise {
+    0% { transform:translateY(0) scale(1); opacity:1; }
+    100% { transform:translateY(-110vh) scale(1.8); opacity:0; }
+  }
+
+  /* Container */
+  .content {
+    text-align:center;
+    animation: fadeIn 2.2s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity:0; transform:translateY(20px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  /* Cake */
+  .cake {
+    width:180px;
+    margin:0 auto 18px;
+    position:relative;
+    animation: pop 1.2s ease;
+  }
+
+  @keyframes pop {
+    0% { transform:scale(0.5); opacity:0; }
+    100% { transform:scale(1); opacity:1; }
+  }
+
+  .cake .layer {
+    width:100%;
+    height:45px;
+    background:#ff7a96;
+    border-radius:6px;
+    margin-bottom:8px;
+    position:relative;
+  }
+  .cake .cream {
+    width:100%;
+    height:30px;
+    background:#ffb8c9;
+    border-radius:6px;
+    margin-top:-10px;
+    z-index:2;
+    position:relative;
+  }
+
+  /* Candle */
+  .candle {
+    width:12px;
+    height:35px;
+    background:#fff;
+    border-radius:4px;
+    margin:0 auto;
+    position:relative;
+    top:-20px;
+  }
+  .flame {
+    width:10px;
+    height:14px;
+    background:orange;
+    border-radius:50%;
+    position:absolute;
+    top:-10px;
+    left:1px;
+    animation:flicker 0.14s infinite alternate;
+  }
+  @keyframes flicker {
+    from { transform:scale(1); opacity:0.85; }
+    to { transform:scale(0.9); opacity:1; }
+  }
+
+  h1 {
+    font-size:2.3rem;
+    margin-bottom:10px;
+  }
+
+  p {
+    font-size:1.1rem;
+    margin-bottom:22px;
+  }
+
+  .btn {
+    padding:12px 20px;
+    background:#fff;
+    color:#d6336c;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>Happy Birthday, [DHARMAPATNI] ❤️</h1>
-    <p class="lead">Every moment with you is my favorite memory. Here are some I picked just for you — scan, smile, and scroll. ✨</p>
 
-    <!-- Optional audio (autoplay is often blocked; user can press play) -->
-    <!-- <audio controls src="audio/happy-bday.mp3"></audio> -->
+<!-- Floating bubbles -->
+<script>
+for(let i = 0; i < 30; i++){
+  let b = document.createElement("div");
+  b.classList.add("bubble");
+  b.style.left = Math.random() * 100 + "%";
+  b.style.animationDelay = (Math.random() * 5) + "s";
+  b.style.transform = "scale(" + (Math.random()*1 + 0.5) + ")";
+  document.body.appendChild(b);
+}
+</script>
 
-    <div class="gallery-container" style="display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 20px;">
-      <div class="photo">
-        <img src="PHP1.jpg" alt="At the cafe">
-        <div class="caption">Dasara days, temple lights, and memories that stay forever..</div>
-      </div>
-      <div class="photo">
-        <img src="PHP2.jpg" alt="Trip">
-        <div class="caption">Our weekend escape — the sunset was jealous of us.</div>
-      </div>
-      <div class="photo">
-        <img src="PHP2.jpg" alt="Trip">
-        <div class="caption">Our weekend escape — the sunrise was jealous of you.</div>
-      </div>
-      <div class="photo">
-        <img src="PHP2.jpg" alt="Trip">
-        <div class="caption">Our weekend escape — the sunrise was jealous of you.</div>
-      </div>
-      <div class="photo">
-        <img src="PHP2.jpg" alt="Trip">
-        <div class="caption">Our weekend escape — the sunrise was jealous of you.</div>
-      </div>
-      <div class="photo">
-        <img src="PHP2.jpg" alt="Trip">
-        <div class="caption">Our weekend escape — the sunrise was jealous of you.</div>
-      </div>
-      <!-- Add more photos similarly -->
+<div class="content">
+  <div class="cake">
+    <div class="layer"></div>
+    <div class="cream"></div>
+    <div class="candle">
+      <div class="flame"></div>
     </div>
-
-    <a class="surprise-btn" href="video.mp4" target="_blank">Open my video message</a>
-    
-    <footer>With all my love, <br>[FROM LOVED ONE] • [29/11]</footer>
   </div>
-</body>
-</html>
+
+  <h1>Happy Birthday, My Love ❤️</h1>
+  <p>May this year bring you smiles, surprises, and all the love you deserve.</p>
+
+  <!-- Link to your main birthday page -->
+  <a href="intro.html">Continue</a>
+
+</div>
 
 </body>
 </html>
-
