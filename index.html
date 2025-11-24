@@ -4,10 +4,13 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Happy Birthday ❤️</title>
+
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
-    background: linear-gradient(120deg, #ffdde1, #ee9ca7);
+    background: linear-gradient(135deg, #ffb0de, #ff8cab, #ff477e);
+    background-size: 300% 300%;
+    animation: bg-move 8s ease infinite;
     height: 100vh;
     overflow:hidden;
     display:flex;
@@ -18,19 +21,40 @@
     position:relative;
   }
 
-  /* Floating particles */
-  .bubble {
+  @keyframes bg-move {
+    0%,100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Floating hearts */
+  .heart {
     position:absolute;
     bottom:-80px;
-    width:20px;
-    height:20px;
-    background: rgba(255,255,255,0.33);
-    border-radius:50%;
-    animation: rise 8s infinite ease-in;
+    font-size:24px;
+    color:rgba(255,255,255,0.7);
+    animation: rise 6s infinite ease-in;
   }
+
   @keyframes rise {
     0% { transform:translateY(0) scale(1); opacity:1; }
-    100% { transform:translateY(-110vh) scale(1.8); opacity:0; }
+    100% { transform:translateY(-120vh) scale(2); opacity:0; }
+  }
+
+  /* Sparkle particles */
+  .spark {
+    position:absolute;
+    width:6px;
+    height:6px;
+    background:white;
+    border-radius:50%;
+    opacity:0.8;
+    animation: sparkle 2s infinite ease-in-out;
+  }
+
+  @keyframes sparkle {
+    0% { transform:scale(0.6); opacity:0.4; }
+    50% { transform:scale(1.4); opacity:1; }
+    100% { transform:scale(0.6); opacity:0.4; }
   }
 
   /* Container */
@@ -38,116 +62,172 @@
     text-align:center;
     animation: fadeIn 2.2s ease;
   }
+
   @keyframes fadeIn {
-    from { opacity:0; transform:translateY(20px); }
+    from { opacity:0; transform:translateY(25px); }
     to   { opacity:1; transform:translateY(0); }
   }
 
   /* Cake */
   .cake {
-    width:180px;
+    width:200px;
     margin:0 auto 18px;
     position:relative;
-    animation: pop 1.2s ease;
+    animation: pulse 1.8s infinite ease-in-out;
   }
 
-  @keyframes pop {
-    0% { transform:scale(0.5); opacity:0; }
-    100% { transform:scale(1); opacity:1; }
+  @keyframes pulse {
+    0%,100% { transform:scale(1); }
+    50% { transform:scale(1.05); }
   }
 
-  .cake .layer {
-    width:100%;
-    height:45px;
-    background:#ff7a96;
-    border-radius:6px;
-    margin-bottom:8px;
-    position:relative;
-  }
-  .cake .cream {
-    width:100%;
-    height:30px;
-    background:#ffb8c9;
-    border-radius:6px;
-    margin-top:-10px;
-    z-index:2;
-    position:relative;
+  /* Animated Cake Emoji */
+  .cake-emoji {
+    font-size: 140px;
+    margin-bottom: 20px;
+    visibility: hidden;
+    animation: cake-enter 1.7s ease-out forwards;
+    text-shadow:
+      0 0 12px rgba(255, 255, 255, 0.9),
+      0 0 30px rgba(255, 160, 180, 0.9),
+      0 0 55px rgba(255, 80, 120, 1);
   }
 
-  /* Candle */
-  .candle {
-    width:12px;
-    height:35px;
-    background:#fff;
-    border-radius:4px;
-    margin:0 auto;
-    position:relative;
-    top:-20px;
-  }
-  .flame {
-    width:10px;
-    height:14px;
-    background:orange;
-    border-radius:50%;
-    position:absolute;
-    top:-10px;
-    left:1px;
-    animation:flicker 0.14s infinite alternate;
-  }
-  @keyframes flicker {
-    from { transform:scale(1); opacity:0.85; }
-    to { transform:scale(0.9); opacity:1; }
+  @keyframes cake-enter {
+    0% {
+      transform: translateY(180px) scale(0.8) rotate(-4deg);
+      opacity: 0;
+      visibility: visible;
+    }
+    60% {
+      transform: translateY(-16px) scale(1.05) rotate(2deg);
+      opacity: 1;
+    }
+    85% {
+      transform: translateY(8px) scale(1) rotate(-1deg);
+    }
+    100% {
+      transform: translateY(0) scale(1) rotate(0);
+      visibility: visible;
+    }
   }
 
   h1 {
     font-size:2.3rem;
-    margin-bottom:10px;
+    margin-bottom:16px;
+    text-shadow:0 0 14px rgba(255,255,255,0.75);
+  }
+
+
+  .flame {
+    width:12px;
+    height:18px;
+    background: radial-gradient(circle, #ffd800, #ff6a00);
+    border-radius:50%;
+    position:absolute;
+    top:-14px;
+    left:1px;
+    box-shadow:0 0 10px #ffcc00;
+    animation:flicker 0.18s infinite alternate;
+  }
+
+  @keyframes flicker {
+    from { transform:scale(1) rotate(-3deg); }
+    to { transform:scale(0.9) rotate(3deg); }
+  }
+
+  h1 {
+    font-size:2.5rem;
+    margin-bottom:16px;
+    text-shadow:0 0 10px rgba(255,255,255,0.85);
   }
 
   p {
-    font-size:1.1rem;
-    margin-bottom:22px;
+    font-size:1.2rem;
+    margin-bottom:28px;
   }
 
-  .btn {
-    padding:12px 20px;
+  a {
+    display:inline-block;
+    padding:14px 26px;
     background:#fff;
     color:#d6336c;
-    border-radius:8px;
+    border-radius:14px;
     text-decoration:none;
-    font-weight:600;
+    font-weight:700;
+    box-shadow:0 4px 12px rgba(255,255,255,0.4);
+    transition:0.25s;
   }
+
+  a:hover {
+    transform:scale(1.08);
+    background:#ffe8f1;
+  }
+ #typewriter {
+    font-size:1.15rem;
+    line-height:1.6;
+    min-height:80px;
+  }
+
+
+
 </style>
 </head>
 <body>
 
-<!-- Floating bubbles -->
 <script>
-for(let i = 0; i < 30; i++){
-  let b = document.createElement("div");
-  b.classList.add("bubble");
-  b.style.left = Math.random() * 100 + "%";
-  b.style.animationDelay = (Math.random() * 5) + "s";
-  b.style.transform = "scale(" + (Math.random()*1 + 0.5) + ")";
-  document.body.appendChild(b);
+// Floating hearts
+for(let i = 0; i < 35; i++){
+  let h = document.createElement("div");
+  h.innerHTML = "❤️";
+  h.classList.add("heart");
+  h.style.left = Math.random() * 100 + "%";
+  h.style.animationDelay = (Math.random() * 6) + "s";
+  h.style.fontSize = (Math.random()*18 + 14) + "px";
+  document.body.appendChild(h);
+}
+
+// Sparkle particles
+for(let i = 0; i < 40; i++){
+  let s = document.createElement("div");
+  s.classList.add("spark");
+  s.style.left = Math.random() * 100 + "%";
+  s.style.top  = Math.random() * 100 + "%";
+  s.style.animationDelay = (Math.random()*2)+"s";
+  document.body.appendChild(s);
 }
 </script>
-
 <div class="content">
-  <div class="cake">
-    <div class="layer"></div>
-    <div class="cream"></div>
-    <div class="candle">
-      <div class="flame"></div>
-    </div>
-  </div>
 
-  <h1>Happy Birthday, My Love ❤️</h1>
-  <p>May this year bring you smiles, surprises, and all the love you deserve.</p>
+  <!-- Animated Cake Emoji -->
+  <div class="cake-emoji">🎂</div>
+  <h1>Happy Birthday </h1>
+  <p id="typewriter"></p>
 
-  <!-- Link to your main birthday page -->
-  <a href="intro.html">Continue</a>
+<script>
+  const text = "Today I celebrate not just the day you were born, but also every beautiful moment you've brought into my life.";
+  let index = 0;
 
+  function typeWriter() {
+    if(index < text.length) {
+      document.getElementById("typewriter").innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 70);
+    }
+  }
+
+  window.onload = typeWriter;
+</script>
+
+<style>
+  #typewriter {
+    font-size:1.15rem;
+    line-height:1.6;
+    min-height:80px;
+    white-space:pre-wrap;
+  }
+</style>
+  <a href="intro.html">Continue 💖</a>
 </div>
 
 </body>
