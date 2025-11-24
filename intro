@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Happy Birthday ❤️</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: linear-gradient(120deg, #ffdde1, #ee9ca7);
+    height: 100vh;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family: "Segoe UI", sans-serif;
+    color:#fff;
+    position:relative;
+  }
+
+  /* Floating particles */
+  .bubble {
+    position:absolute;
+    bottom:-80px;
+    width:20px;
+    height:20px;
+    background: rgba(255,255,255,0.33);
+    border-radius:50%;
+    animation: rise 8s infinite ease-in;
+  }
+  @keyframes rise {
+    0% { transform:translateY(0) scale(1); opacity:1; }
+    100% { transform:translateY(-110vh) scale(1.8); opacity:0; }
+  }
+
+  /* Container */
+  .content {
+    text-align:center;
+    animation: fadeIn 2.2s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity:0; transform:translateY(20px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  /* Cake */
+  .cake {
+    width:180px;
+    margin:0 auto 18px;
+    position:relative;
+    animation: pop 1.2s ease;
+  }
+
+  @keyframes pop {
+    0% { transform:scale(0.5); opacity:0; }
+    100% { transform:scale(1); opacity:1; }
+  }
+
+  .cake .layer {
+    width:100%;
+    height:45px;
+    background:#ff7a96;
+    border-radius:6px;
+    margin-bottom:8px;
+    position:relative;
+  }
+  .cake .cream {
+    width:100%;
+    height:30px;
+    background:#ffb8c9;
+    border-radius:6px;
+    margin-top:-10px;
+    z-index:2;
+    position:relative;
+  }
+
+  /* Candle */
+  .candle {
+    width:12px;
+    height:35px;
+    background:#fff;
+    border-radius:4px;
+    margin:0 auto;
+    position:relative;
+    top:-20px;
+  }
+  .flame {
+    width:10px;
+    height:14px;
+    background:orange;
+    border-radius:50%;
+    position:absolute;
+    top:-10px;
+    left:1px;
+    animation:flicker 0.14s infinite alternate;
+  }
+  @keyframes flicker {
+    from { transform:scale(1); opacity:0.85; }
+    to { transform:scale(0.9); opacity:1; }
+  }
+
+  h1 {
+    font-size:2.3rem;
+    margin-bottom:10px;
+  }
+
+  p {
+    font-size:1.1rem;
+    margin-bottom:22px;
+  }
+
+  .btn {
+    padding:12px 20px;
+    background:#fff;
+    color:#d6336c;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+  }
+</style>
+</head>
+<body>
+
+<!-- Floating bubbles -->
+<script>
+for(let i = 0; i < 30; i++){
+  let b = document.createElement("div");
+  b.classList.add("bubble");
+  b.style.left = Math.random() * 100 + "%";
+  b.style.animationDelay = (Math.random() * 5) + "s";
+  b.style.transform = "scale(" + (Math.random()*1 + 0.5) + ")";
+  document.body.appendChild(b);
+}
+</script>
+
+<div class="content">
+  <div class="cake">
+    <div class="layer"></div>
+    <div class="cream"></div>
+    <div class="candle">
+      <div class="flame"></div>
+    </div>
+  </div>
+
+  <h1>Happy Birthday, My Love ❤️</h1>
+  <p>May this year bring you smiles, surprises, and all the love you deserve.</p>
+
+  <!-- Link to your main birthday page -->
+  <a href="index.html" class="btn">Continue 🎁</a>
+</div>
+
+</body>
+</html>
