@@ -2,65 +2,155 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Happy Birthday ❤️</title>
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-           margin:0; padding:0; background:#fff7f9; color:#222; display:flex; flex-direction:column; align-items:center;}
-    .container { max-width:900px; padding:28px; text-align:center; }
-    h1 { font-size:2.2rem; margin:0 0 8px; color:#d6336c; }
-    p.lead { font-size:1.1rem; margin:0 0 18px; }
-    .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-              gap:12px; margin-top:18px; }
-    .photo { border-radius:12px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.08); background:#fff; }
-    .photo img { width:100%; display:block; height:220px; object-fit:cover; }
-    .caption { padding:10px; font-size:0.95rem; color:#444; }
-    footer { margin-top:20px; font-size:0.9rem; color:#666; }
-    .surprise-btn { display:inline-block; margin-top:12px; padding:10px 16px; border-radius:10px;
-                    background:#d6336c; color:white; text-decoration:none; font-weight:600;}
-    audio { margin-top:14px; }
-  </style>
 
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff7f9;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeBody 1s ease;
+    }
+
+    @keyframes fadeBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      max-width: 900px;
+      padding: 28px;
+      text-align: center;
+      animation: fadeUp 1s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin: 0 0 8px;
+      color: #d6336c;
+    }
+
+    p.lead {
+      font-size: 1.1rem;
+      margin: 0 0 18px;
+    }
+
+    /* Uniform Image Grid */
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      padding: 20px;
+      width: 100%;
+    }
+
+    .photo {
+      border-radius: 15px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      animation: fadeUp 0.9s ease;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 250px;      /* same size everywhere */
+      object-fit: cover; /* keeps all images uniform */
+      transition: transform 0.4s ease;
+    }
+
+    /* Hover Zoom Animation */
+    .photo:hover img {
+      transform: scale(1.07);
+    }
+
+    .caption {
+      padding: 12px;
+      font-size: 0.95rem;
+      color: #444;
+      background: #fff;
+    }
+
+    .surprise-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: #d6336c;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 12px;
+      transition: 0.3s ease;
+    }
+
+    .surprise-btn:hover {
+      background: #b02a57;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+  </style>
 </head>
+
 <body>
   <div class="container">
     <h1>Happy Birthday, [DHARMAPATNI] ❤️</h1>
     <p class="lead">Every moment with you is my favorite memory. Here are some I picked just for you — scan, smile, and scroll. ✨</p>
 
-    <!-- Optional audio (autoplay is often blocked; user can press play) -->
-    <!-- <audio controls src="audio/happy-bday.mp3"></audio> -->
-
-    <div class="gallery-container" style="display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 20px;">
+    <!-- Photo Grid -->
+    <div class="gallery-container">
       <div class="photo">
-        <img src="PHP1.jpg" alt="At the cafe">
-        <div class="caption">Dasara days, temple lights, and memories that stay forever..</div>
+        <img src="PHP1.jpg" alt="Pic 1">
+        <div class="caption">Dasara days, temple lights, and memories that stay forever.</div>
       </div>
+
       <div class="photo">
-        <img src="PHP2.jpg" alt="Trip">
+        <img src="PHP2.jpg" alt="Pic 2">
         <div class="caption">Our weekend escape — the sunset was jealous of us.</div>
       </div>
+
       <div class="photo">
-        <img src="PHP3.jpg" alt="Trip">
-        <div class="caption">This picture reminds me that even after our worst moments, we find our way back.</div>
+        <img src="PHP3.jpg" alt="Pic 3">
+        <div class="caption">Even after our worst moments, somehow we find our way back.</div>
       </div>
+
       <div class="photo">
-        <img src="PHP4.jpg" alt="Trip">
-        <div class="caption">The moment I saw your traditional festival pictures, it felt like a small festival inside me.</div>
+        <img src="PHP4.jpg" alt="Pic 4">
+        <div class="caption">Your festival pictures felt like a small festival inside me.</div>
       </div>
+
       <div class="photo">
-        <img src="PHP5.jpg" alt="Trip">
+        <img src="PHP5.jpg" alt="Pic 5">
         <div class="caption">Just us having fun together.</div>
       </div>
+
       <div class="photo">
-        <img src="PHP8.jpg" alt="Trip">
-        <div class="caption">Our first outing, our first photo, our first real laugh together… and already one of my favorites.</div>
+        <img src="PHP8.jpg" alt="Pic 6">
+        <div class="caption">Our first outing, our first photo, our first real laugh together… one of my favorites.</div>
       </div>
-      <!-- Add more photos similarly -->
     </div>
 
     <a class="surprise-btn" href="video.mp4" target="_blank">Open my video message</a>
     
-    <footer>With all my love, <br>[FROM LOVED ONE] • [29/11]</footer>
+    <footer>
+      With all my love, <br>[FROM LOVED ONE] • [29/11]
+    </footer>
   </div>
 </body>
 </html>
