@@ -4,146 +4,130 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Happy Birthday ❤️</title>
-
   <style>
-    body {
+    body { 
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      margin: 0; padding: 0;
-      background: #fff7f9; color: #222;
-      display: flex; flex-direction: column; align-items: center;
+      margin:0; padding:0; 
+      background:#fff7f9; color:#222; 
+      display:flex; flex-direction:column; align-items:center;
     }
 
-    .container {
-      max-width: 900px;
-      padding: 28px;
+    .container { 
+      max-width:900px; 
+      padding:28px; 
+      text-align:center; 
+    }
+
+    h1 { 
+      font-size:2.2rem; 
+      margin:0 0 8px; 
+      color:#d6336c; 
+    }
+
+    p.lead { 
+      font-size:1.1rem; 
+      margin:0 0 18px; 
+    }
+
+    /* Vertical gallery */
+    .gallery-container {
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      gap: 20px; 
+      padding: 20px;
+    }
+
+    .photo { 
+      width: 100%;        /* full width of container */
+      max-width: 400px;   /* optional max width for desktop */
+      height: 250px;      /* uniform height for all images */
+      border-radius:12px; 
+      overflow:hidden; 
+      box-shadow:0 6px 20px rgba(0,0,0,0.08); 
+      background:#fff; 
+    }
+
+    .photo img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      display: block; 
+    }
+
+    .caption { 
+      padding:10px; 
+      font-size:0.95rem; 
+      color:#444; 
       text-align: center;
     }
 
-    h1 {
-      font-size: 2.2rem;
-      margin: 0 0 8px;
-      color: #d6336c;
+    footer { 
+      margin-top:20px; 
+      font-size:0.9rem; 
+      color:#666; 
     }
 
-    p.lead {
-      font-size: 1.1rem;
-      margin: 0 0 18px;
+    .surprise-btn { 
+      display:inline-block; 
+      margin-top:12px; 
+      padding:10px 16px; 
+      border-radius:10px;
+      background:#d6336c; 
+      color:white; 
+      text-decoration:none; 
+      font-weight:600;
     }
 
-    /* -------------------------
-       FIXED UNIFORM IMAGE SIZE 
-       ------------------------- */
-    .photo {
-      width: 100%;
-      max-width: 280px;      /* Same width for all cards */
-      border-radius: 12px;
-      overflow: hidden;
-      background: #fff;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    audio { 
+      margin-top:14px; 
     }
 
-    .photo img {
-      width: 100%;
-      height: 250px;         /* SAME HEIGHT FOR ALL IMAGES */
-      object-fit: cover;     /* Crop perfectly */
-      display: block;
-    }
-
-    /* Desktop – slightly bigger images */
-    @media (min-width: 768px) {
-      .photo img {
-        height: 280px;
-      }
-    }
-
-    /* Phone – slightly smaller */
-    @media (max-width: 480px) {
-      .photo img {
+    /* Responsive: keep same height, full width on small screens */
+    @media (max-width: 600px) {
+      .photo {
+        max-width: 100%;
         height: 220px;
       }
     }
 
-    /* Gallery layout */
-    .gallery-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .caption {
-      padding: 10px;
-      font-size: 0.95rem;
-      color: #444;
-    }
-
-    .surprise-btn {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 16px;
-      border-radius: 10px;
-      background: #d6336c;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    footer {
-      margin-top: 20px;
-      font-size: 0.9rem;
-      color: #666;
-    }
   </style>
 </head>
-
 <body>
   <div class="container">
     <h1>Happy Birthday, [DHARMAPATNI] ❤️</h1>
     <p class="lead">Every moment with you is my favorite memory. Here are some I picked just for you — scan, smile, and scroll. ✨</p>
 
-    <!-- GALLERY START -->
     <div class="gallery-container">
-
       <div class="photo">
-        <img src="PHP1.jpg" alt="Dasara photo">
-        <div class="caption">Dasara days, temple lights, and memories that stay forever.</div>
+        <img src="PHP1.jpg" alt="At the cafe">
+        <div class="caption">Dasara days, temple lights, and memories that stay forever..</div>
       </div>
-
       <div class="photo">
         <img src="PHP2.jpg" alt="Trip">
         <div class="caption">Our weekend escape — the sunset was jealous of us.</div>
       </div>
-
       <div class="photo">
-        <img src="PHP3.jpg" alt="After fight">
+        <img src="PHP3.jpg" alt="Trip">
         <div class="caption">This picture reminds me that even after our worst moments, we find our way back.</div>
       </div>
-
       <div class="photo">
-        <img src="PHP4.jpg" alt="Traditional">
+        <img src="PHP4.jpg" alt="Trip">
         <div class="caption">The moment I saw your traditional festival pictures, it felt like a small festival inside me.</div>
       </div>
-
       <div class="photo">
-        <img src="PHP5.jpg" alt="Fun">
+        <img src="PHP5.jpg" alt="Trip">
         <div class="caption">Just us having fun together.</div>
       </div>
-
       <div class="photo">
-        <img src="PHP8.jpg" alt="First outing">
+        <img src="PHP8.jpg" alt="Trip">
         <div class="caption">Our first outing, our first photo, our first real laugh together… and already one of my favorites.</div>
       </div>
-
     </div>
-    <!-- GALLERY END -->
 
     <a class="surprise-btn" href="video.mp4" target="_blank">Open my video message</a>
-
-    <footer>
-      With all my love,<br>[FROM LOVED ONE] • [29/11]
-    </footer>
-
+    
+    <footer>With all my love, <br>[FROM LOVED ONE] • [29/11]</footer>
   </div>
-</body>
+</body> 
 </html>
