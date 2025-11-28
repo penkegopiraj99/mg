@@ -29,7 +29,6 @@
       margin:0 0 18px; 
     }
 
-    /* Vertical gallery */
     .gallery-container {
       display: flex; 
       flex-direction: column; 
@@ -38,27 +37,27 @@
       padding: 20px;
     }
 
-    .photo { 
-      width: 100%;        /* full width of container */
-      max-width: 400px;   /* optional max width for desktop */
-      height: 250px;      /* uniform height for all images */
-      border-radius:12px; 
-      overflow:hidden; 
-      box-shadow:0 6px 20px rgba(0,0,0,0.08); 
-      background:#fff; 
+    .photo {
+      width: 100%;
+      max-width: 400px;
+      height: 250px; /* uniform height */
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08);
+      background:#fff;
     }
 
-    .photo img { 
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover; 
-      display: block; 
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    .caption { 
-      padding:10px; 
-      font-size:0.95rem; 
-      color:#444; 
+    .caption {
+      padding:10px;
+      font-size:0.95rem;
+      color:#444;
       text-align: center;
     }
 
@@ -83,14 +82,12 @@
       margin-top:14px; 
     }
 
-    /* Responsive: keep same height, full width on small screens */
     @media (max-width: 600px) {
       .photo {
         max-width: 100%;
         height: 220px;
       }
     }
-
   </style>
 </head>
 <body>
@@ -101,28 +98,33 @@
     <div class="gallery-container">
       <div class="photo">
         <img src="PHP1.jpg" alt="At the cafe">
-        <div class="caption">Dasara days, temple lights, and memories that stay forever..</div>
       </div>
+      <div class="caption">Dasara days, temple lights, and memories that stay forever..</div>
+
       <div class="photo">
         <img src="PHP2.jpg" alt="Trip">
-        <div class="caption">Our weekend escape — the sunset was jealous of us.</div>
       </div>
+      <div class="caption">Our weekend escape — the sunset was jealous of us.</div>
+
       <div class="photo">
         <img src="PHP3.jpg" alt="Trip">
-        <div class="caption">This picture reminds me that even after our worst moments, we find our way back.</div>
       </div>
+      <div class="caption">This picture reminds me that even after our worst moments, we find our way back.</div>
+
       <div class="photo">
         <img src="PHP4.jpg" alt="Trip">
-        <div class="caption">The moment I saw your traditional festival pictures, it felt like a small festival inside me.</div>
       </div>
+      <div class="caption">The moment I saw your traditional festival pictures, it felt like a small festival inside me.</div>
+
       <div class="photo">
         <img src="PHP5.jpg" alt="Trip">
-        <div class="caption">Just us having fun together.</div>
       </div>
+      <div class="caption">Just us having fun together.</div>
+
       <div class="photo">
         <img src="PHP8.jpg" alt="Trip">
-        <div class="caption">Our first outing, our first photo, our first real laugh together… and already one of my favorites.</div>
       </div>
+      <div class="caption">Our first outing, our first photo, our first real laugh together… and already one of my favorites.</div>
     </div>
 
     <a class="surprise-btn" href="video.mp4" target="_blank">Open my video message</a>
